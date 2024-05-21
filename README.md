@@ -30,6 +30,16 @@ Route::get('get-captcha',[MathCaptchaController::class,'resetCaptcha'])->name('g
 {!! \App\Http\Controllers\MathCaptchaController::getScript() !!}
 ```
 
+## Controller Validation Logic
+```
+$cvalidate = MathCaptchaController::validate($request);
+
+if($cvalidate!==true){
+    // your logic is here
+}
+
+```
+
 ## Integrate with your tools
 
 - [ ] [Set up project integrations](https://gitlab.com/yeasherarafath/mathcaptcha/-/settings/integrations)
