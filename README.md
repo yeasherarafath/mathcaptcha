@@ -19,7 +19,12 @@ git remote add origin https://gitlab.com/yeasherarafath/mathcaptcha.git
 git branch -M main
 git push -uf origin main
 ```
+## Add Captcha Refresh Route
+```
+// App\Http\Controllers\MathCaptchaController
+Route::get('get-captcha',[MathCaptchaController::class,'resetCaptcha'])->name('get.captcha');
 
+```
 ## Integrate with your tools
 
 - [ ] [Set up project integrations](https://gitlab.com/yeasherarafath/mathcaptcha/-/settings/integrations)
