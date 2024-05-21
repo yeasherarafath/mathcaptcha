@@ -25,6 +25,11 @@ git push -uf origin main
 Route::get('get-captcha',[MathCaptchaController::class,'resetCaptcha'])->name('get.captcha');
 
 ```
+## Use Captcha Script to Blade
+```
+{!! \App\Http\Controllers\MathCaptchaController::getScript() !!}
+```
+
 ## Integrate with your tools
 
 - [ ] [Set up project integrations](https://gitlab.com/yeasherarafath/mathcaptcha/-/settings/integrations)
