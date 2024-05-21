@@ -71,7 +71,6 @@ class MathCaptchaController{
  *
  * @param Request $request
  * @param string $name captcha input field
- * @return void
  */
     static function validate(Request $request,$name="captcha"){
 
@@ -109,7 +108,6 @@ class MathCaptchaController{
  */
     static function getScript($selector='#captcha-box'){
         return "$(document).on('click', '.captcha-refresh-btn', function(event) {
-            
             if($(this).data('target')){
                 var selector = $(this).data('target')
             }else{
