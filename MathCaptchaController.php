@@ -71,8 +71,9 @@ class MathCaptchaController{
  *
  * @param Request $request
  * @param string $name captcha input field
+ * @param string $message validation message
  */
-    static function validate(Request $request,$name="captcha"){
+    static function validate(Request $request,$name="captcha", $message = "Invalid captcha, please try again"){
 
         $validator = \Validator::make($request->all(),[
             $name => 'required|numeric'
@@ -86,7 +87,7 @@ class MathCaptchaController{
         $data = self::get();
         if(((int) $request->get($name))!=($data['cap_num1'] + $data['cap_num2'])){
             
-            $validator->errors()->add($name,'Invalid captcha, please try again');
+            $validator->errors()->add($name,$message);
             // $validator->getMessageBag()->add($name,'Invalid captcha, please try again');
             return back()->withInput()->withErrors($validator);
         }
