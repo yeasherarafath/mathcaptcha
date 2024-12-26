@@ -25,6 +25,12 @@ git push -uf origin main
 Route::get('get-captcha',[MathCaptchaController::class,'resetCaptcha'])->name('get.captcha');
 
 ```
+
+## Use Captcha Input to Blade
+```
+{!! \App\Http\Controllers\MathCaptchaController::input() !!}
+```
+
 ## Use Captcha Script to Blade
 ```
 {!! \App\Http\Controllers\MathCaptchaController::getScript() !!}
