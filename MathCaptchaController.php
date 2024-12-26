@@ -106,7 +106,7 @@ class MathCaptchaController{
  * @param string $selector to where new html code with input will be loaded
  * @return void
  */
-    static function getScript($selector='#captcha-box'){
+    static function getScript($selector='#captcha-wrapper'){
         return "$(document).on('click', '.captcha-refresh-btn', function(event) {
             if($(this).data('target')){
                 var selector = $(this).data('target')
